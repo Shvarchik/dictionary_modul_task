@@ -18,10 +18,10 @@ def phone_number(length):
         phone_numbers.append(string)
     return phone_numbers
 def create_dict():
-    surname = ['Иванов', 'Петров', 'Сидоров', 'Зайцев', 'Васильев', 'Волков']
-    name = ['Иван', 'Петр', 'Василий', 'Александр', 'Виктор', 'Андрей']
-    position = ['секретарь', 'оператор', 'администратор', 'водитель', 'курьер', 'директор']
-    address = ['ул. Ленина 35', 'ул. Тверская 40/2', 'ул. Революции 76', 'ул. Дубравная 5', 'ул. Цветная 17', 'ул. Спасская 1']
+    surname = ['Ivanov', 'Petrov', 'Sidorov', 'Zaytsev', 'Vasiliev', 'Volkov']
+    name = ['Ivan', 'Petr', 'Vasiliy', 'Alexandr', 'Viktor', 'Andrew']
+    position = ['secretary', 'operator', 'administrator', 'driver', 'manager', 'programmer']
+    address = ['ul. Lenina 35', 'ul. Tverskaya 40/2', 'ul. Pushkina 76', 'ul. Lermontova 5', 'ul. Tzvetnaya 17', 'ul. Veselaya 1']
     birthdays = birthday(6)
     phone_numbers =phone_number(6)
 

@@ -15,4 +15,4 @@ def id():
     b = int(input('введите id: '))
     return b
     
- 
+ # TODO переписать

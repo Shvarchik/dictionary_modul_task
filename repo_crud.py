@@ -9,7 +9,7 @@ def create_new():
 
 def create():
     data = ie.import_file()
-    id = int(input("Введите ID: "))
+    id = (input("Введите ID: "))
     fam = input("Введите фамилию: ")
     name = input("Введите имя: ")
     bd = input('Введите дату рождения: ')
@@ -29,20 +29,25 @@ def read():
 def update():
     id_choice = ui.id()
     data = ie.import_file()
-    print(data[id_choice])
+    print(data[id_choice-1])
     old = input('Введите, что нужно изменить: ')
     new = input('Введите то, на что нужно изменить: ')
     for i in range (0,len(data[id_choice])):
-        if data [id_choice][i] == old:
-            data [id_choice][i] = new
-    print(data[id_choice])
+        if data [id_choice-1][i] == old:
+            data [id_choice-1][i] = new
+    print(data[id_choice-1])
     ie.export_file(data)
     log.logger('внесение изменений')
     
 def delete():
     id_choice = ui.id()
     data = ie.import_file()
+    while id_choice > len(data):
+        print ('записи с таким номером не существует, попробуйте еще раз: ')
+        id_choice = ui.id() 
     data.pop(id_choice-1)
+    for i in range (id_choice-1,len(data)):
+        data [i][0] = str(i+1)
     ie.export_file(data)
     log.logger('удаление записи')
     
