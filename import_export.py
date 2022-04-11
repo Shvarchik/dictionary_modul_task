@@ -10,15 +10,15 @@ def import_file():
             array_list.append(new_string)
     return (array_list)
 
-def export_file():
-    with open('database.csv') as f:
-        writer = csv.writer(f)
-        for row in import_file():
-            writer.writerow(row)
+def export_file(data):
+    with open('database.csv','w') as file:
+        for row in data:
+            file.write(f'{str(row)}\n')
+        
+# with open('database.csv', 'w', newline='') as file:
+     # writer = csv.writer(file)
+     # for row in data:
+     #     writer.writerow(row)
 
-
-print (import_file())
-print()
-
-with open('database.csv') as f:
-    print(f.read())
+# data = import_file()
+# export_file(data)

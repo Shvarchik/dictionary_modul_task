@@ -25,4 +25,4 @@ def create_dict():
     birthdays = birthday(6)
     phone_numbers =phone_number(6)
 
-    return dict([(i, f'{surname[randint(0,5)]}; {name[randint(0,5)]}; {birthdays[randint(0,5)]}; {position[randint(0,5)]}; {address[randint(0,5)]}; {phone_numbers[randint(0,5)]}') for i in range(1, 101)])
+    return dict([(i, f'{surname[randint(0,5)]}; {name[randint(0,5)]}; {birthdays[randint(0,5)]}; {position[randint(0,5)]}; {address[randint(0,5)]}; {phone_numbers[randint(0,5)]}') for i in range(1, 11)])

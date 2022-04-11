@@ -1,34 +1,17 @@
 from random import randint
 import dictionary_create as dc
 
-#dictionary = { 1: 'Иванов; Александр; 10.8.2001; администратор; ул. Революции 76; +79971628368',
- #2: 'Волков; Андрей; 17.5.1997; администратор; ул. Цветная 17; +79287195720',
- #3: 'Иванов; Андрей; 21.6.1994; секретарь; ул. Революции 76; +79266170302',
- #4: 'Волков; Иван; 21.5.1971; директор; ул. Цветная 17; +79178131240',
- #5: 'Васильев; Александр; 21.6.1994; оператор; ул. Революции 76; +79767653675'}
-dictionary = dc.create_dict()
-def file_create(dictionary):
+# dictionary = dc.create_dict()
+# def file_create(dictionary):
+#     with open('database.csv', 'w') as file:
+#         for i in dictionary:
+#            file.write('{}; {}\n'.format(i,dictionary[i]))
+
+def file_create():
     with open('database.csv', 'w') as file:
-        for i in dictionary:
-            file.write(f'{dictionary[i]}\n')
+        for i in dc.create_dict():
+            file.write('{}; {}\n'.format(i,dc.create_dict()[i]))
 
-
-# def birthday(length):
-#     birthdays = [] 
-#     for i in range(0, length):
-#         data = [str(randint(1, 31)), str(randint(1, 12)), str(randint(1970, 2005))]
-#         str_birthday = str(".".join(data))
-#         birthdays.append(str_birthday)
-#     return birthdays
-
-# def phone_number(length):
-#     phone_numbers = []
-#     for i in range(0, length):
-#         string = '+79'
-#         for j in range (9):
-#             string += str(randint(0, 9)) 
-#         phone_numbers.append(string)
-#     return phone_numbers
 
 def create_string():
     surname = ['Иванов', 'Петров', 'Сидоров', 'Зайцев', 'Васильев', 'Волков']
