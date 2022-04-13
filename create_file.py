@@ -10,6 +10,4 @@ import dictionary_create as dc
 def file_create():
     with open('database.csv', 'w') as file:
         for i in dc.create_dict():
-            file.write('{}; {}\n'.format(i,dc.create_dict()[i]))
-
-
+            file.write('{};{}\n'.format(i,dc.create_dict()[i]))

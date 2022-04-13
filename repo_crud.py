@@ -22,12 +22,12 @@ def create():
     log.logger('новая запись в файле')
     
 def read():
-    id_choice = ui.id()
+    id_choice = ui.choice(3)
     print (ie.import_file()[id_choice-1])
     log.logger('чтение записи')
       
 def update():
-    id_choice = ui.id()
+    id_choice = ui.choice(3)
     data = ie.import_file()
     print(data[id_choice-1])
     old = input('Введите, что нужно изменить: ')
@@ -40,7 +40,7 @@ def update():
     log.logger('внесение изменений')
     
 def delete():
-    id_choice = ui.id()
+    id_choice = ui.choice(3)
     data = ie.import_file()
     while id_choice > len(data):
         print ('записи с таким номером не существует, попробуйте еще раз: ')
@@ -53,15 +53,15 @@ def delete():
     
 
 def result():
-    id_choice = ui.choice()
-    while id_choice != 5:
-        if id_choice == 0: create_new()
-        elif id_choice == 1: create()
-        elif id_choice == 2: read()
-        elif id_choice == 3: update()
+    id_choice = ui.choice(1)
+    while id_choice != 0:
+        if id_choice == 1: create_new()
+        elif id_choice == 2: create()
+        elif id_choice == 3: read()
+        elif id_choice == 4: update()
         else: delete()
-        if ui.exit_choice() == 0: exit()
-        else: id_choice = ui.choice()
+        if ui.choice(2) == 0: exit()
+        else: id_choice = ui.choice(1)
 
 
 
